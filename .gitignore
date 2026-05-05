@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+
+# build outputs
+dist/
+
+# vite / temp
+.vite/
+*.local
+
+# logs
+*.log
+
+
+# IDE
+.vscode/
+.idea/
+
+# test cache
+vitest-cache/

@@ -1,0 +1,41 @@
+{
+  "name": "headless-date-picker",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/headless-date-picker.umd.cjs",
+  "module": "./dist/headless-date-picker.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/headless-date-picker.js",
+      "require": "./dist/headless-date-picker.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vitest/coverage-v8": "^1.6.1",
+    "@vue/test-utils": "^2.4.9",
+    "autoprefixer": "^10.5.0",
+    "fast-check": "^3.23.2",
+    "happy-dom": "^20.9.0",
+    "postcss": "^8.5.13",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.59.1",
+    "vite": "^5.4.21",
+    "vitest": "^1.6.1",
+    "vue": "^3.5.33"
+  }
+}

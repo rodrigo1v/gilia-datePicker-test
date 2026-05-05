@@ -1,0 +1,11 @@
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--dp-primary) 90%, white),
+    color-mix(in srgb, var(--dp-accent) 80%, white)
+  ) no-repeat fixed;
+
+  color: var(--dp-text);
+}

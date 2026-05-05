@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dp-primary:       #2f2c6d;
+  --dp-accent:        #f7931e;
+  --dp-bg:            #ffffff;
+  --dp-surface:       #4b5157;
+  --dp-border:        #e5e7eb;
+  --dp-text:          #ffffff;
+  --dp-muted:         #6b7280;
+
+  /* ── Component  ─────────────────────── */
+  --dp-accent-hover:  #e07b0a;
+  --dp-focus-ring:    0 0 0 -2px var(--dp-accent);
+  --dp-cell-size:     2.25rem;
+  --dp-font-size: 0.875rem;
+  --dp-input-width:   14rem;
+  --dp-input-padding: 0.625rem 1rem 0.625rem 2.25rem;
+}
