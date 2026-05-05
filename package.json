@@ -17,7 +17,9 @@
   "sideEffects": false,
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc --emitDeclarationOnly",
+    "build:lib": "vite build && tsc -p tsconfig.build.json",
+    "build:demo": "vite build -c vite.demo.config.ts",
+    "build": "npm run build:lib && npm run build:demo",
     "test": "vitest run",
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",

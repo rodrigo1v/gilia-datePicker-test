@@ -1,6 +1,6 @@
 # Headless Date Picker
 
-A headless date picker engine implemented in pure TypeScript, paired with a minimal Vue 3 wrapper for UI interaction
+A headless date picker engine implemented in pure TypeScript, paired with a minimal Vue 3 wrapper for UI interaction.
 
 The core logic is fully framework-agnostic and has no runtime dependencies, allowing it to remain independent from any rendering layer. While this project includes only a Vue 3 integration, the architecture is designed to support additional UI frameworks through a dedicated adapter layer that would bridge the engine with each framework’s reactivity and rendering model.
 
@@ -8,14 +8,17 @@ The core logic is fully framework-agnostic and has no runtime dependencies, allo
 
 ## Architecture Overview
 
-The project is divided into two layers:
+The project is divided into three layers:
 
-* **Engine (`src/headless-date-picker`)**
-  Contains all date logic (calendar generation, navigation, selection).
-  It is completely independent from Vue and does not access the DOM.
+### 1. Engine (`src/headless-date-picker`)
+Contains all date logic (calendar generation, navigation, selection).
+It is completely independent from Vue and does not access the DOM.
 
-* **Vue Wrapper (`src/vue`)**
-  A thin UI layer that connects the engine to Vue’s reactivity system and renders the calendar.
+### 2. Vue Wrapper (`src/vue`)
+A thin UI layer that connects the engine to Vue’s reactivity system and renders the calendar.
+
+### 3. Styles (`src/styles`)
+Design system based on CSS variables, fully framework-agnostic.
 
 ---
 
@@ -23,13 +26,13 @@ The project is divided into two layers:
 
 The engine owns a single mutable `CalendarState` object:
 
-* `visibleMonth`
-* `visibleYear`
-* `selectedDate`
+- `visibleMonth`
+- `visibleYear`
+- `selectedDate`
 
 All updates (navigation and selection) mutate this state directly.
 
-On the Vue side, the state object is wrapped using `reactive()`, allowing Vue to track changes without the engine needing to know about reactivity.
+On the Vue side, the state is wrapped using Vue reactivity (`ref`), allowing UI updates without the engine being aware of any framework.
 
 ---
 
@@ -37,11 +40,12 @@ On the Vue side, the state object is wrapped using `reactive()`, allowing Vue to
 
 The engine uses the Temporal API when available, falling back to UTC-based `Date` operations otherwise.
 
-* The fallback avoids timezone-related inconsistencies by using UTC methods
+- The fallback avoids timezone-related inconsistencies by using UTC methods
+- Ensures deterministic calendar behavior across environments
 
 ---
 
-## Running the Project
+## Running the Project (Local Development)
 
 Install dependencies:
 
@@ -61,13 +65,38 @@ Run tests:
 npm test
 ```
 
-Build the library:
+## Build the library:
 
+```bash
+npm run build:lib
+```
+
+## Running the Demo Build (Production Preview)
+
+Build the demo version:
+```bash
+npm run build:demo
+```
+
+Preview the production build locally:
+```bash
+npx serve demo-dist
+```
+
+## Full Build (Library + Demo)
 ```bash
 npm run build
 ```
-
 ---
+
+## GitHub Pages Deployment
+
+The demo is automatically deployed using GitHub Actions.
+Live demo is served from:
+```bash
+demo-dist/
+```
+After each push to main, the latest version is published automatically via GitHub Pages.
 
 ## Notes
 

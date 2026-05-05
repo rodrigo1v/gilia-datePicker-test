@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist",
+    "stripInternal": true
+  },
+  "include": ["src/headless-date-picker/index.ts"],
+  "exclude": [
+    "tests",
+    "src/vue",
+    "src/styles",
+  ]
+}

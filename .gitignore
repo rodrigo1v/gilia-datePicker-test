@@ -3,6 +3,7 @@ node_modules/
 
 # build outputs
 dist/
+demo-dist/
 
 # vite / temp
 .vite/
@@ -10,7 +11,15 @@ dist/
 
 # logs
 *.log
+*.log*
+npm-debug.log*
 
+# OS
+.DS_Store
+
+# env files
+.env
+.env.*
 
 # IDE
 .vscode/
@@ -18,3 +27,4 @@ dist/
 
 # test cache
 vitest-cache/
+coverage/
