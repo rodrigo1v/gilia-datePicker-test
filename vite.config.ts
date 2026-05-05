@@ -9,6 +9,8 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [vue()],
 
+    base: isDemo ? '/gilia-datePicker-test/' : './',
+
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src'),
