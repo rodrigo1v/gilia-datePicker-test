@@ -98,6 +98,12 @@ demo-dist/
 ```
 After each push to main, the latest version is published automatically via GitHub Pages.
 
+## Live Demo
+
+Check the latest deployed version here:
+
+https://rodrigo1v.github.io/gilia-datePicker-test/
+
 ## Notes
 
 * No external date libraries are used
