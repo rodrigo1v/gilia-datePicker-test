@@ -19,7 +19,7 @@ const inputValue = computed(() => {
   const value = engine.getInputValue();
   if (!value) return '';
   const [year, month, day] = value.split('-');
-  return `${month} / ${day} / ${year}`;
+  return `${month}/${day}/${year}`;
 });
 const headerLabel = computed(() => {
   tick.value;

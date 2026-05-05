@@ -42,16 +42,17 @@ describe('DatePicker.vue', () => {
 
     const input = wrapper.find('input');
 
-    expect(input.element.value).toMatch(/\d{4}-\d{2}-\d{2}/);
+    expect(input.element.value).toMatch(/^\d{2}\/\d{2}\/\d{4}$/);
   });
 
   it('closes on ESC', async () => {
     const wrapper = mount(DatePicker);
 
     await wrapper.find('input').trigger('click');
-    await wrapper.trigger('keydown.esc');
 
-    expect(wrapper.find('.dp-day').exists()).toBe(false);
+    await wrapper.find('div.relative').trigger('keydown.esc');
+
+    expect(wrapper.find('button.dp-day').exists()).toBe(false);
   });
 
   it('applies selected class correctly', async () => {
